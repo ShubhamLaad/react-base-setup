@@ -1,5 +1,3 @@
-import ClassSet from '../../mixins/class-set.js';
-
 class Header extends React.Component{
 
     render () {

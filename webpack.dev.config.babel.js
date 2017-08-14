@@ -40,7 +40,8 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js$/,
+      {
+        test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
@@ -59,7 +60,13 @@ module.exports = {
             'css-loader', // translates CSS into CommonJS
             'sass-loader' // compiles Sass to CSS]
           ]
-      }
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: [/node_modules/,/vendor/],
+        loader: "eslint-loader"
+      },
     ]
   },
   devServer: {
