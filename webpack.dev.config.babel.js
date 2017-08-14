@@ -28,7 +28,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new CopyWebpackPlugin([
-      { from: path.join(rootPath,'src/assets/static/images'), to: 'assets/image' },
+      { from: path.join(rootPath,'src/assets/static/images'), to: 'assets/images' },
     ]),
     new webpack.ProvidePlugin({
       React: 'react',
