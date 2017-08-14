@@ -1,0 +1,102 @@
+=text($size: null, $line-height: null, $color: null, $font-weight: null)
+  font-size: $size
+  line-height: $line-height
+  color: $color
+  font-weight: $font-weight
+
+=icon($width: null, $height: null, $positionX: null, $positionY: null)
+  width: $width
+  height: $height
+  background-position: $positionX $positionY
+
+=vMargin($top, $bottom)
+  margin-top: $top
+  margin-bottom: $bottom
+
+=vPadding($top, $bottom)
+  padding-top: $top
+  padding-bottom: $bottom
+
+=transform($transforms)
+  -moz-transform: $transforms
+  -o-transform: $transforms
+  -ms-transform: $transforms
+  -webkit-transform: $transforms
+  transform: $transforms
+
+// rotate
+=rotate($deg)
+  +transform(rotate(#{$deg}deg))
+
+// scale
+=scale($scale)
+   +transform(scale($scale))
+
+// translate
+=translate($x, $y)
+   +transform(translate($x, $y))
+
+// skew
+=skew($x, $y)
+   +transform(skew(#{$x}deg, #{$y}deg))
+
+=transition($property, $duration, $function)
+  -webkit-transition: $property $duration $function
+  -moz-transition: $property $duration $function
+  -ms-transition: $property $duration $function
+  -o-transition: $property $duration $function
+  transition: $property $duration $function
+
+//Animation
+=keyframes($name)
+  @-o-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-webkit-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+=animationDelay($time)
+  animation-delay: $time
+  -o-animation-delay: $time
+  -ms-animation-delay: $time
+  -webkit-animation-delay: $time
+  -moz-animation-delay: $time
+
+=animation($name: null, $duration: null, $timing-function: null, $iteration-count: null, $direction: null)
+  -o-nimation: $name $duration $timing-function $iteration-count $direction
+  -ms-animation-delay: $name $duration $timing-function $iteration-count $direction
+  -moz-animation: $name $duration $timing-function $iteration-count $direction
+  -webkit-animation: $name $duration $timing-function $iteration-count $direction
+  animation: $name $duration $timing-function $iteration-count $direction
+
+//Flex mixins
+=flexbox
+  display: -webkit-flex
+  display: -ms-flexbox //ie
+  display: flex
+
+=inline-flex
+  display: -webkit-inline-flex
+  display: -ms-inline-flexbox
+  display: inline-flex
+
+=flex-direction($direction)
+  -webkit-flex-direction: $direction
+  -ms-flex-direction: $direction
+  flex-direction: $direction
+
+=justify-content($value)
+  -webkit-justify-content: $value
+  -ms-justify-content: $value
+  justify-content: $value
+
+=circle($size, $background: transparent, $border-width: null, $border-color: null)
+  width: $size
+  height: $size
+  border: $border-width solid $border-color
+    radius: 50%
+  display: block
+  background: $white

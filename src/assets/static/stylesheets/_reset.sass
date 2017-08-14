@@ -1,0 +1,53 @@
+ul, li
+  list-style-type: none
+
+ul, ol
+  padding: 0
+  margin: 0
+  line-height: 100%
+
+a
+  text-decoration: none
+  color: $green
+  &:hover, &:focus
+    text-decoration: none
+    color: $gray-87
+a, button
+  cursor: pointer
+
+.btn, button, a
+  outline: 0
+  &:focus, &:active:focus, &.active:focus, &:active, &.active.focus
+    outline: 0
+
+h1, h2, h3, h4, h5, h6
+  margin-top: 0
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+  -webkit-appearance: none
+
+label
+  margin-bottom: 0
+
+[type="checkbox"],
+[type="radio"]
+  position: absolute
+  left: -9999px
+
+body
+  +text(12px, 14px)
+  font-family: 'Roboto', sans-serif
+  background: #f3f3f3
+
+@media (min-width: $md-desktop + 1)
+  .container
+    width: 1200px
+
+@media (max-width: $mobile)
+  .container, [class^="col-"]
+    padding-right: 10px
+    padding-left: 10px
+  .row
+    margin-left: -10px
+    margin-right: -10px

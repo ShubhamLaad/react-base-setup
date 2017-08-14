@@ -1,0 +1,67 @@
+.primeBtn
+  border: 1px solid $green
+  +text(12px, 30px, $green, $medium)
+  background: $white
+  padding: 0 15px
+  text-transform: uppercase
+  &:hover
+    color: $white
+    background: $green
+
+.breadcrumb
+  background: transparent
+  padding: 9px 0
+  margin-bottom: 0
+  a
+    +text(12px, 18px, null, $medium)
+  li
+    &:before
+      color: $green
+    &.active
+      a
+        color: $gray-87
+
+.checkBoxWrap
+  margin-top: 8px
+  &:first-child
+    margin-top: 0
+  span
+    display: inline-block
+    vertical-align: middle
+  label
+    cursor: pointer
+    line-height: 18px
+    margin-bottom: 0
+    font-weight: $normal
+  .checkboxIcon
+    width: 18px
+    height: 18px
+    border: 1px solid #ddd
+    background: transparent
+    position: relative
+    &:after
+      content: '✔'
+      position: absolute
+      top: 0
+      left: 3px
+      transition: all .2s
+      color: $gray-33
+  [type="checkbox"]
+    &:not(:checked) + label .checkboxIcon:after
+      opacity: 0
+      transform: scale(0)
+    &:checked + label .checkboxIcon:after
+      opacity: 1
+      transform: scale(1)
+  .name
+    color: $gray-33
+    margin: 0 5px 0 12px
+  .number
+    color: $gray-79
+
+.stopScroll
+  body
+    overflow: hidden
+
+.displayTable
+  display: table
