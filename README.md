@@ -28,6 +28,7 @@ The project has the basic folder structure for react, ES6 syntax, webpack v2, re
     8. html-webpack-plugin use for html file, copy-webpack-plugin use for copy (fonts, images) static files as it is to build folder
     9. extract-text-webpack-plugin for build fetch css and sass styles from js file and create css file then import this on html. Genraly for local development we do not saprate css from js file so we do not use this package for dev env
     (https://github.com/webpack-contrib/extract-text-webpack-plugin)
+    10. eslint pakages for adding rules for js code for more rules http://eslint.org/docs/rules/
 4. Create webpack config file for buid and local serves
     default plugins spacify new webpack.ProvidePlugin({ React: 'react',}),
 5. npm start start server on 3000 port spacify in webpack.dev.config file
