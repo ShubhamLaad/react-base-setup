@@ -1,4 +1,4 @@
-class Container extends React.Component{
+class FirstPage extends React.Component{
     render () {
         return (
             <div className="text-center">
@@ -11,4 +11,4 @@ class Container extends React.Component{
     }
 }
 
-export default Container;
+export default FirstPage;
