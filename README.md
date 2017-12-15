@@ -32,3 +32,11 @@ The project has the basic folder structure for react, ES6 syntax, webpack v2, re
     default plugins spacify new webpack.ProvidePlugin({ React: 'react',}),
 5. npm start start server on 3000 port spacify in webpack.dev.config file
 6. npm run build for creating build
+
+###Update each dependency in package.json to the latest version:
+npm i -g npm-check-updates
+npm-check-updates -u
+npm install
+
+Note: If problem with node sass run
+$ npm rebuild node-sass --force

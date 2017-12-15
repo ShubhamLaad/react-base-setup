@@ -1,36 +1,36 @@
 'use strict';
 
-import path from 'path';
+import Path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-var rootPath = path.join(__dirname);
+const RootPath = Path.join(__dirname);
+const BUILD = Path.join(__dirname, 'build');
+const SOURCE = Path.join(__dirname, 'src');
 
 module.exports = {
-  devtool: 'eval',
   entry: {
-    index: path.join(rootPath, 'src/assets/javascript/main.js'),
+    index: Path.join(RootPath, 'src/assets/javascript/main.js'),
   },
   output: {
-    path: path.join(rootPath, '/build/'),
+    path: Path.join(RootPath, '/build/'),
     filename: '[name]-[hash].min.js',
     publicPath: '/'
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: Path.join(SOURCE, 'index.html'),
       inject: 'body',
       filename: 'index.html',
       chunks: ['index']
     }),
     new ExtractTextPlugin("[name]-[hash].min.css"),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new CopyWebpackPlugin([
-      { from: path.join(rootPath,'src/assets/static/images'), to: 'assets/images' },
+      { from: Path.join(RootPath,'src/assets/static/images'), to: 'assets/images' },
     ]),
     new webpack.ProvidePlugin({
       React: 'react',
@@ -38,18 +38,17 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.js', '.json']
+    extensions: ['.js', '.jsx', '.json', '.sass', '.css'],
+    alias: {
+      components: Path.resolve(__dirname, 'src/assets/javascript/components/'),
+    },
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /(\.jsx|\.js)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react'],
-          compact: true
-        }
       },
       {
         test: /\.css/,
