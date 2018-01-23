@@ -40,3 +40,71 @@ npm install
 
 Note: If problem with node sass run
 $ npm rebuild node-sass --force
+
+
+
+
+
+## Installing
+
+The project has react, ES6 syntax, webpack v2, react router v4, SCSS for styling.
+* Clone the repository in your machine and run the following commands in project folder:
+
+```bash
+1. Update your local package not for windows
+$ sudo apt-get update
+
+2. Install Node.js
+ubuntu
+$ sudo apt-get install nodejs
+windows from here
+https://nodejs.org/en/download/
+https://wsvincent.com/install-node-js-npm-windows/
+
+3. Go to frontend repo and install packages
+$ npm install
+
+4. Start node server and frontend will run on localhost:3000
+$ npm start
+
+5. Make build
+$ npm run build
+```
+
+```bash
+Set Up Nginx Server Blocks (Virtual Hosts)
+1. Install Nginx
+
+2. Add host in hosts file
+127.0.0.1  local.edease.com
+
+3. Create the Server Block File
+ubuntu
+$ sudo nano /etc/nginx/sites-available/local.edease.com
+windows
+write in config file inside nginx folder
+
+server {
+
+        listen 80;
+        server_name local.edease.com;
+
+        location / {
+                proxy_pass http://localhost:3000;
+        }
+        location /api/ {
+                proxy_pass  http://localhost:8080;
+        }
+
+}
+
+4. Enable your Server Blocks and Restart Nginx
+sudo service nginx start
+sudo service nginx stop
+sudo service nginx restart
+ubuntu
+$ sudo ln -s /etc/nginx/sites-available/local.edease.com /etc/nginx/sites-enabled/
+windows
+Stop nginx and start it
+
+Now open local.edease.com in browser

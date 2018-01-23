@@ -4,7 +4,7 @@ class FirstPage extends React.Component{
             <div className="text-center">
                 <h1>First page</h1>
                 <div className="imageWrap">
-                    <img src="/assets/images/shubham.jpg" className="img-responsive"/>
+                    <img src="/assets/images/shubham.jpg" className="img-responsive hide"/>
                 </div>
             </div>
         )

@@ -10,7 +10,7 @@ const BUILD = Path.join(__dirname, 'build');
 const SOURCE = Path.join(__dirname, 'src');
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'source-map', //open file original source in browser
   entry: {
     index: Path.join(RootPath, 'src/assets/javascript/main.js'),
   },
@@ -68,6 +68,7 @@ module.exports = {
     port: 3030,
     contentBase: BUILD,
     hot: true,
-    inline: true
+    inline: true,
+    open: true,
   }
 };
