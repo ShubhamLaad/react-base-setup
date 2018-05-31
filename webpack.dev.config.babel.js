@@ -70,5 +70,6 @@ module.exports = {
     hot: true,
     inline: true,
     open: true,
+    historyApiFallback: true,
   }
 };
